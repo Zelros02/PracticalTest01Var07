@@ -4,11 +4,12 @@ import android.app.Service
 import android.content.Intent
 import android.os.Handler
 import android.os.IBinder
+import android.os.Looper
 import kotlin.random.Random
 
 class PracticalTest01Var07Service : Service() {
 
-    private val handler = Handler()
+    private val handler = Handler(Looper.getMainLooper())
     private val broadcastIntent = Intent("ro.pub.cs.systems.eim.practicaltest01var07.UPDATE_FIELDS")
 
     private val runnable = object : Runnable {
