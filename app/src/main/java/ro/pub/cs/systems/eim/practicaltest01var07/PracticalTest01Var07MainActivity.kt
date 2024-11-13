@@ -1,5 +1,6 @@
 package ro.pub.cs.systems.eim.practicaltest01var07
 
+import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -26,10 +27,10 @@ class PracticalTest01Var07MainActivity : AppCompatActivity() {
             val value4 = intent?.getIntExtra("value4", 0) ?: 0
 
             // Update the EditText fields
-            findViewById<EditText>(R.id.field1).setText(value1.toString())
-            findViewById<EditText>(R.id.field2).setText(value2.toString())
-            findViewById<EditText>(R.id.field3).setText(value3.toString())
-            findViewById<EditText>(R.id.field4).setText(value4.toString())
+            findViewById<EditText>(R.id.field1).setText("$value1")
+            findViewById<EditText>(R.id.field2).setText("$value2")
+            findViewById<EditText>(R.id.field3).setText("$value3")
+            findViewById<EditText>(R.id.field4).setText("$value4")
         }
     }
 
@@ -38,6 +39,7 @@ class PracticalTest01Var07MainActivity : AppCompatActivity() {
     private var sum: Int = 0
     private var product: Int = 0
 
+    @SuppressLint("InlinedApi")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
