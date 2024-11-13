@@ -18,10 +18,10 @@ class PracticalTest01Var07SecondaryActivity : AppCompatActivity() {
         val value4 = intent.getIntExtra("value4", 0)
 
         // Set values in TextViews
-        findViewById<TextView>(R.id.field1).text = value1.toString()
-        findViewById<TextView>(R.id.field2).text = value2.toString()
-        findViewById<TextView>(R.id.field3).text = value3.toString()
-        findViewById<TextView>(R.id.field4).text = value4.toString()
+        findViewById<TextView>(R.id.field1).text = "$value1"
+        findViewById<TextView>(R.id.field2).text = "$value2"
+        findViewById<TextView>(R.id.field3).text = "$value3"
+        findViewById<TextView>(R.id.field4).text = "$value4"
 
         val sumButton: Button = findViewById(R.id.sumButton)
         val productButton: Button = findViewById(R.id.productButton)
