@@ -1,6 +1,5 @@
 package ro.pub.cs.systems.eim.practicaltest01var07
 
-import android.app.Activity
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -11,13 +10,10 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class PracticalTest01Var07MainActivity : AppCompatActivity() {
 
@@ -86,7 +82,7 @@ class PracticalTest01Var07MainActivity : AppCompatActivity() {
             val field4 = findViewById<EditText>(R.id.field4)
 
             if (listOf(field1, field2, field3, field4).all { it.text.toString().toIntOrNull() != null }) {
-                val intent = Intent(this, PracticaTest01Var07SecondaryActivity::class.java)
+                val intent = Intent(this, PracticalTest01Var07SecondaryActivity::class.java)
                 intent.putExtra("value1", field1.text.toString().toInt())
                 intent.putExtra("value2", field2.text.toString().toInt())
                 intent.putExtra("value3", field3.text.toString().toInt())
