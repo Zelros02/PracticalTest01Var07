@@ -34,7 +34,7 @@ class PracticaTest01Var07SecondaryActivity : AppCompatActivity() {
             val sum = value1 + value2 + value3 + value4
             val resultIntent = Intent()
             resultIntent.putExtra("resultSum", sum)
-            setResult(Activity.RESULT_OK, resultIntent)
+            setResult(1, resultIntent)
             finish()
         }
 
@@ -42,7 +42,7 @@ class PracticaTest01Var07SecondaryActivity : AppCompatActivity() {
             val product = value1 * value2 * value3 * value4
             val resultIntent = Intent()
             resultIntent.putExtra("resultProduct", product)
-            setResult(Activity.RESULT_OK, resultIntent)
+            setResult(2, resultIntent)
             finish()
         }
     }

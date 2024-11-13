@@ -63,13 +63,18 @@ class PracticalTest01Var07MainActivity : AppCompatActivity() {
 
         // Initialize the ActivityResultLauncher
         activityLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == RESULT_OK) {
-                sum = result.data?.getIntExtra("resultSum", 0) ?: 0
-                product = result.data?.getIntExtra("resultProduct", 0) ?: 0
+            if (result.resultCode == 1) {
+                sum = result.data?.getIntExtra("resultSum", sum) ?: 0
 
-                // Display sum and product in a Toast
-                Toast.makeText(this, "Sum: $sum, Product: $product", Toast.LENGTH_LONG).show()
-                Log.d("MainActivity", "Sum: $sum, Product: $product")
+                // Display sum in Toast
+                Toast.makeText(this, "Sum: $sum", Toast.LENGTH_LONG).show()
+                Log.d("MainActivity", "Sum: $sum")
+            } else if (result.resultCode == 2) {
+                product = result.data?.getIntExtra("resultProduct", product) ?: 0
+
+                // Display product in Toast
+                Toast.makeText(this, "Product: $product", Toast.LENGTH_LONG).show()
+                Log.d("MainActivity", "Product: $product")
             }
         }
 
